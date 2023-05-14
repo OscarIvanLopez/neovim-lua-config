@@ -259,6 +259,21 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+  {
+    'neoclide/coc.nvim',
+    branch='release',
+    lazy=false,
+  },
+  {
+    "andweeb/presence.nvim",
+    opts = function()
+      return require "plugins.configs.presence"
+    end,
+    config = function(_, opts)
+      require("presence").setup(opts)
+    end,
+    lazy = true,
+  },
 }
 
 local config = require("core.utils").load_config()

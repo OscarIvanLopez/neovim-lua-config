@@ -22,6 +22,12 @@ local plugins = {
     }
   },
   {
-    "mgedmin/python-imports.vim"
-  }
+    "mgedmin/python-imports.vim",
+  },
+  {
+    "ludovicchabant/vim-gutentags",
+  },
+  {
+    "andweeb/presence.nvim"
+  },
 }
