@@ -138,6 +138,7 @@ local default_plugins = {
 
       vim.g.mason_binaries_list = opts.ensure_installed
     end,
+    lazy = false,
   },
 
   {
@@ -148,6 +149,7 @@ local default_plugins = {
     config = function()
       require "plugins.configs.lspconfig"
     end,
+    lazy = false,
   },
 
   -- load luasnips + cmp related in insert mode only
@@ -196,6 +198,7 @@ local default_plugins = {
     config = function(_, opts)
       require("cmp").setup(opts)
     end,
+    lazy = false,
   },
 
   {
@@ -273,6 +276,14 @@ local default_plugins = {
       require("presence").setup(opts)
     end,
     lazy = true,
+  },
+  {
+    'akinsho/flutter-tools.nvim',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    lazy = false,
   },
 }
 

@@ -61,4 +61,28 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
+
+require("lspconfig").dartls.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+  cmd = { "dart", "language-server", "--protocol=lsp" },
+
+  init_options = {
+  closingLabels = true,
+  flutterOutline = true,
+  onlyAnalyzeProjectsWithOpenFiles = true,
+  outline = true,
+  suggestFromUnimportedLibraries = true
+  },
+
+  filetypes = { "dart" },
+  settings = {
+    dart = {
+    completeFunctionCalls = true,
+    showTodos = true
+    },
+  },
+}
+
 return M
